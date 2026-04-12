@@ -1,8 +1,8 @@
 class Relios < Formula
   desc "Local release pipeline CLI for SwiftPM macOS apps"
   homepage "https://github.com/papa-channy/relios"
-  url "https://github.com/papa-channy/relios/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "1e64f436ab22dbf96d6ee32128e8b8c79d5f327dc0629369c82ce0ecc2d1ad24"
+  url "https://github.com/papa-channy/relios/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "e3077a2f18357067d34d41b3ac5f0494c4a546003faa681036d5f06b52959c8e"
   license "MIT"
   head "https://github.com/papa-channy/relios.git", branch: "main"
 
