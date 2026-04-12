@@ -10,11 +10,15 @@ class Relios < Formula
   depends_on :macos
 
   def install
+    # Bake the release tag into the CLI's --version output. Source checkouts
+    # keep the sentinel; Homebrew installs pin to the Formula's version.
+    inreplace "Sources/ReliosCLI/ReliosCommand.swift",
+              /version: "[^"]+",/, "version: \"#{version}\","
     system "swift", "build", "--disable-sandbox", "-c", "release"
     bin.install ".build/release/relios"
   end
 
   test do
-    assert_match "relios", shell_output("#{bin}/relios --help")
+    assert_match version.to_s, shell_output("#{bin}/relios --version")
   end
 end
